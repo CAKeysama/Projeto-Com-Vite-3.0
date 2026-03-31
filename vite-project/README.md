@@ -1,16 +1,68 @@
-# React + Vite
+# Documentação do Projeto — Projeto Com Vite 3.0
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 1. Visão geral
+Este projeto implementa uma aplicação web de autenticação de usuários com interface em React. O fluxo principal permite **cadastro**, **login** e **logout** com persistência de sessão, utilizando os serviços do Firebase.
 
-Currently, two official plugins are available:
+Do ponto de vista acadêmico, trata-se de um exemplo de aplicação cliente (front-end) orientada a componentes, com integração a um provedor externo de identidade.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 2. Stack tecnológica
+A stack atual do projeto é composta por:
 
-## React Compiler
+- **Vite**: ferramenta de build e servidor de desenvolvimento para aplicações front-end.
+- **React**: biblioteca para construção da interface com arquitetura baseada em componentes e estado.
+- **Firebase Authentication**: serviço de autenticação por e-mail e senha.
+- **ESLint**: padronização e análise estática de código.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Dependências principais
+- `react`
+- `react-dom`
+- `firebase`
 
-## Expanding the ESLint configuration
+## 3. Estrutura funcional do sistema
+Em alto nível, o sistema está organizado da seguinte forma:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `src/App.jsx`: controla estados globais de autenticação e alterna entre telas de login/cadastro/dashboard.
+- `src/auth.js`: centraliza funções de autenticação (`login`, `registro`, `logout` e observador de sessão).
+- `src/firebase.js`: inicializa o app Firebase e expõe o objeto de autenticação.
+- `src/components/*`: componentes de interface para formulários e painel do usuário.
+
+## 4. Banco e autenticação
+### 4.1 Serviço utilizado
+O projeto está integrado ao **Firebase Authentication** para gerenciamento de credenciais (e-mail e senha) e sessão de usuário.
+
+### 4.2 Sobre “banco de dados”
+No estado atual, não há uso explícito de banco relacional (SQL) ou coleções de dados do Firestore no código-fonte desta aplicação.
+
+Assim, o armazenamento efetivamente utilizado nesta versão está centrado na camada de autenticação do Firebase (contas e credenciais de acesso).
+
+## 5. Contas já cadastradas
+Para facilitar testes, existem duas contas de acesso já criadas:
+
+1. **beta@gmail.com**  
+   Senha: **beta@gmail.com**
+
+2. **alpha@gmail.com**  
+   Senha: **alpha@gmail.com**
+
+> Observação: conforme solicitado, em ambas as contas a senha é igual ao texto do próprio e-mail.
+
+## 6. Execução local
+No diretório `vite-project`, executar:
+
+```bash
+npm install
+npm run dev
+```
+
+Para gerar build de produção:
+
+```bash
+npm run build
+```
+
+## 7. Identificação do criador
+
+- **Nome:** Gustavo Domingues da Silva
+- **RA:** 2971392511008
+- **Curso:** DSM - Manhã
+- **Semestre:** 3° Semestre
