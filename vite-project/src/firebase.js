@@ -2,13 +2,13 @@ import { initializeApp } from 'firebase/app'
 import { getAuth } from 'firebase/auth'
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyC157tDEGXEau7_3zlmBiYFyrvFN5RxuXc',
-  authDomain: 'bd1todolist2.firebaseapp.com',
-  projectId: 'bd1todolist2',
-  storageBucket: 'bd1todolist2.firebasestorage.app',
-  messagingSenderId: '772126284296',
-  appId: '1:772126284296:web:396d7555b336fb4af14fbd',
-}
+  apiKey: "AIzaSyDIDnM5sV6-rsNqhqZdRxVGH5NF33ltzQk",
+  authDomain: "projetocomvite.firebaseapp.com",
+  projectId: "projetocomvite",
+  storageBucket: "projetocomvite.firebasestorage.app",
+  messagingSenderId: "714845389710",
+  appId: "1:714845389710:web:c66275263a44fd54d65adf"
+};
 
 const app = initializeApp(firebaseConfig)
 const auth = getAuth(app)
